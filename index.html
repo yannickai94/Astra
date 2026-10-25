@@ -813,7 +813,7 @@ for(const q of[[3,2],[4,2],[5,2],[3,3],[5,3]])put(12,q[0],q[1],'C');put(12,4,3,'
 for(const q of[[10,2],[11,2],[12,2],[10,3],[12,3]])put(13,q[0],q[1],'C');put(13,11,3,'Z');
 
 const WT={'0:9,0':[53,10,42],'0:10,0':[53,11,42],'53:10,43':[0,9,1],'53:11,43':[0,10,1],'53:10,0':[26,9,10],'53:11,0':[26,10,10],'26:9,11':[53,10,1],'26:10,11':[53,11,1],'53:21,24':[5,1,6],'5:0,6':[53,20,24],'53:0,24':[6,16,5],'6:17,5':[53,1,24],'5:17,6':[27,1,5],'27:0,5':[5,15,6],'27:17,5':[12,1,5],'12:0,5':[27,16,5],'6:0,5':[28,16,5],'28:17,5':[6,1,5],'28:0,5':[13,16,5],'13:17,5':[28,1,5],'12:17,5':[17,1,5],'17:0,5':[12,16,5],'17:17,5':[18,1,5],'18:0,5':[17,16,5],'18:17,5':[21,1,5],'21:0,5':[18,16,5],'21:17,5':[22,1,5],'22:0,5':[21,16,5],'13:0,5':[19,16,5],'19:17,5':[13,1,5],'19:0,5':[20,16,5],'20:17,5':[19,1,5]};
-const GATE={5:()=>NP[2].done,6:()=>NP[2].done,28:()=>NP[14].done,47:()=>NP[15].done,48:()=>NP[30].done,51:()=>NP[2].done,52:()=>NP[15].done,17:()=>allB(),19:()=>allB(),21:()=>nd('Granit')&&nd('Boreas'),22:()=>nd('Granit')&&nd('Boreas')},GMSG={5:'Ein Wächter am Osttor: Der Funkelwald ist zu gefährlich für Anfänger. Besiege erst Frieda in Flammenstadt!',6:'Ein Wächter am Westtor: Die Muschelbucht ist gesperrt. Besiege erst Frieda in Flammenstadt!',28:'Eine Absperrung blockiert den Weg nach Perlhafen. Besiege erst Tamara in Waldheim!',47:'Der Nebelwald ist undurchdringlich. Besiege erst Marlo in Perlhafen, dann findest du den Weg.',48:'Das Korallenmeer ist gesperrt. Besiege erst Volta in Donnerstadt!',51:'Der Aschenpfad ist abgesperrt. Besiege erst Frieda in Flammenstadt!',52:'Der Glutschlund ist lebensgefährlich. Besiege erst Marlo in Perlhafen!',17:'Ein Wächter versperrt den Weg: Du brauchst die ersten fünf Orden (Frieda bis Umbra) für Route 2.',19:'Ein Wächter versperrt den Weg: Du brauchst die ersten fünf Orden (Frieda bis Umbra) für Route 3.',21:'Das Tor zur Kristallhöhle ist versiegelt, bis du Granit und Boreas besiegt hast.',22:'Das Tor von Astralpolis bleibt zu, bis du Granit und Boreas besiegt hast.'};
+const GATE={5:()=>NP[2].done,6:()=>NP[14].done,28:()=>NP[14].done,47:()=>NP[15].done,48:()=>NP[30].done,51:()=>NP[2].done,52:()=>NP[15].done,17:()=>allB(),19:()=>allB(),21:()=>nd('Granit')&&nd('Boreas'),22:()=>nd('Granit')&&nd('Boreas')},GMSG={5:'Ein Wächter am Osttor: Der Funkelwald ist zu gefährlich für Anfänger. Besiege erst Frieda in Flammenstadt!',6:'Ein Wächter am Westtor: Die Muschelbucht ist gesperrt. Besiege erst Tamara in Waldheim!',28:'Eine Absperrung blockiert den Weg nach Perlhafen. Besiege erst Tamara in Waldheim!',47:'Der Nebelwald ist undurchdringlich. Besiege erst Marlo in Perlhafen, dann findest du den Weg.',48:'Das Korallenmeer ist gesperrt. Besiege erst Volta in Donnerstadt!',51:'Der Aschenpfad ist abgesperrt. Besiege erst Frieda in Flammenstadt!',52:'Der Glutschlund ist lebensgefährlich. Besiege erst Marlo in Perlhafen!',17:'Ein Wächter versperrt den Weg: Du brauchst die ersten fünf Orden (Frieda bis Umbra) für Route 2.',19:'Ein Wächter versperrt den Weg: Du brauchst die ersten fünf Orden (Frieda bis Umbra) für Route 3.',21:'Das Tor zur Kristallhöhle ist versiegelt, bis du Granit und Boreas besiegt hast.',22:'Das Tor von Astralpolis bleibt zu, bis du Granit und Boreas besiegt hast.'};
 const INS=new Set(),AINF={},DARK=new Set();
 const inside=a=>(a>1&&a<5)||(a>6&&a<12)||a===14||a===15||a===16||(a>22&&a<26)||a===29||(a>=30&&a<=46)||INS.has(a);
 AT[29]={f:'#2a2038',l:'#3a2f4d',t:['#3a2f4d','#5a4a78'],r:'#7b1fa2'};
@@ -821,7 +821,7 @@ AT[16]={f:'#34415f',l:'#4a5a82',t:['#44557c','#6f86be'],r:'#00e5ff'};
 const NP=[
  {x:6,y:12,c:'#2e7d32',h:'#8d6e63',hr:'#3e2723',ic:'#2e7d32',n:'Jäger Bodo',team:[['pilzi',3],['fluf',3]],a:['Bodo: Das ist mein Wald! Zeig, was du kannst!'],b:['Bodo: Stark! Im hohen Gras warten viele wilde Monster.']},
  {x:13,y:14,c:'#1e88e5',h:'#fdd835',f:1,hr:'#00acc1',ic:'#0288d1',n:'Anglerin Lea',team:[['fischi',5],['nager',5]],a:['Lea: Mein Fang des Tages wird dich besiegen!'],b:['Lea: Du kämpfst wie ein Wasserfall! Im Norden wartet Frieda.']},
- {x:4,y:2,z:7,c:'#e53935',h:'#212121',f:1,hr:'#d32f2f',ic:'#ff6f00',n:'Frieda',boss:1,ord:'Flammenorden',team:[['drakli',9],['kohli',9],['drakoon',11]],a:['Frieda: Ich bin die Arenaleiterin von Astraland.','Frieda: Zeig mir deinen Kampfgeist!'],b:['Frieda: Das Flammenorden gehört dir!','Frieda: Die Schattenbande hat den Kristall gestohlen. Ihr Anführer Nox versteckt sich in der Düsterhöhle im Nordwesten.','Frieda: Das Siegel der Höhle bricht erst, wenn dich alle acht Arenaleiter anerkennen. Besuche den Funkelwald im Osten und die Muschelbucht im Westen. Dahinter liegen weitere Städte!']},
+ {x:4,y:2,z:7,c:'#e53935',h:'#212121',f:1,hr:'#d32f2f',ic:'#ff6f00',n:'Frieda',boss:1,ord:'Flammenorden',team:[['drakli',9],['kohli',9],['drakoon',11]],a:['Frieda: Ich bin die Arenaleiterin von Astraland.','Frieda: Zeig mir deinen Kampfgeist!'],b:['Frieda: Das Flammenorden gehört dir!','Frieda: Die Schattenbande hat den Kristall gestohlen. Ihr Anführer Nox versteckt sich in der Düsterhöhle im Nordwesten.','Frieda: Das Siegel der Höhle bricht erst, wenn dich alle acht Arenaleiter anerkennen. Dein nächstes Ziel ist Tamara in Waldheim.','Frieda: Geh zurück auf Route 1 und nimm das Osttor zum Funkelwald. Dort versperrt ein dicker Busch den Weg. Mit meinem VM01 räumst du ihn weg!'],item:{k:'vmc',m:'Frieda überreicht dir VM01 ZERSCHNEIDER! Öffne MENÜ > BEUTEL, wähle VM01 und bringe es einem deiner Monster bei.'}},
  {x:11,y:17,c:'#9e9e9e',h:'#fff',hr:'#e0e0e0',nc:1,ic:'#795548',n:'Opa Hein',say:()=>all8()?'Hein: Die Düsterhöhle liegt im Nordwesten. Dort leben mächtige Schattenmonster. Nimm viele Tränke mit!':allB()?'Hein: Fünf Orden, nicht schlecht. Die Düsterhöhle öffnet sich erst mit allen acht. Route 2 und Route 3 stehen dir schon offen!':'Hein: Feuer schlägt Pflanze, Wasser Feuer, Pflanze Wasser. Elektro schlägt Wasser. Im Laden kannst du einkaufen!'},
  {x:6,y:4,z:4,c:'#fdd835',h:'#1e88e5',nc:1,hr:'#e65100',ic:'#43a047',n:'Kai',rival:1,team:[],a:['Kai: Ich finde den Kristall vor dir, {N}! Das schwöre ich dir.','Kai: Aber zuerst zeigen wir, wer von uns das bessere Team hat. Los, kämpfe gegen mich!'],b:['Kai: Na gut, du bist stark. Ich suche im Norden nach Spuren.','Kai: Geh nach Norden auf Route 1 und besiege Bodo und Lea. Dahinter liegt die erste Arena!']},
  {x:7,y:1,z:1,c:'#4a148c',h:'#212121',hr:'#6a1b9a',ic:'#ffeb3b',n:'Nox',fin:1,team:[['nachtar',66],['phantara',66],['wolfax',66],['teslarax',67],['drakoon',67],['sternax',68]],a:['Nox: Du also. Du bist mir die ganze Zeit gefolgt.','Nox: Der Astrakristall gehört mir! Niemand kommt vorbei!'],b:['Nox: Unmöglich... Nimm den Kristall zurück.','Der Astrakristall leuchtet wieder. Astraland ist gerettet!','Auf dem Platz von Astralpolis erwartet dich nun Astralon. Fülle den Dex und werde der stärkste Trainer. Danke fürs Spielen!']},
@@ -832,8 +832,8 @@ const NP=[
  {x:4,y:2,z:4,c:'#ffffff',h:'#ffffff',hr:'#e0e0e0',nc:1,hr:'#e0e0e0',ic:'#5d4037',n:'Prof. Tann',say:()=>{if(stc<0)return 'Prof. Tann: Wähle dein erstes Monster! Tippe eine der drei Kapseln an.';if(NP[2].done&&!it.vmc){it.vmc=1;sfx('lvl');return 'Prof. Tann: Frieda hat dich anerkannt! Hier ist VM01 Zerschneider. Bring es im Beutel einem Monster bei.'}if(bdn()>=3&&!qs.ept){qs.ept=1;it.h_epteiler=(it.h_epteiler||0)+1;sfx('lvl');return 'Prof. Tann: Drei Orden, das ist stark! Hier ist ein EP-TEILER. Gib ihn im Menü unter TEAM > ITEM einem Monster: Es erhält dann auch EP, wenn es nicht kämpft.'}return NP[5].done?'Prof. Tann: Der Kristall ist zurück! Du bist ein wahrer Held.':all8()?'Prof. Tann: Du hast alle acht Orden! Nox sitzt in der Düsterhöhle im Nordwesten. Sie ist die gefährlichste Höhle von Astraland. Pass auf dich auf!':allB()?'Prof. Tann: Fünf Orden, das ist gut! Aber es gibt acht Arenaleiter: Granit in Felsenfeste, Boreas in Frostburg und Zenit in Astralpolis. Erst dann öffnet sich die Düsterhöhle.':'Prof. Tann: Besiege die Arenaleiter der Reihe nach: Frieda, Tamara, Marlo, Volta und Umbra. Danach öffnen sich Route 2 und Route 3.'}}
 ,{x:12,y:5,z:5,rival:1,f:1,hr:'#2e7d32',ic:'#8bc34a',c:'#388e3c',h:'#fdd835',n:'Försterin Mia',team:[['moosi',8],['pilzi',8],['kohli',9]],a:['Mia: Willkommen im Funkelwald!','Mia: Hier lernt man Geduld. Zeig mal dein Können!'],b:['Mia: Beeindruckend! Du hast ein gutes Gespür.']},
  {x:11,y:6,z:6,rival:1,f:1,hr:'#ff4081',ic:'#00bcd4',c:'#00acc1',h:'#ffffff',n:'Surferin Kira',team:[['quelli',9],['fischi',9],['nager',9]],a:['Kira: Die Wellen sind perfekt für einen Kampf!'],b:['Kira: Wow, du surfst wie ein Profi!']},
- {x:6,y:4,z:6,nc:1,hr:'#bdbdbd',ic:'#795548',c:'#6d4c41',h:'#fff',n:'Angler Ole',say:()=>!NP[2].done?'Ole: Besiege erst Frieda, dann schenke ich dir etwas Besonderes.':(it.vms?'Ole: Das Meer gehört dir. Surfe mutig, und suche Inseln mit Schätzen!':(it.vms=1,sfx('lvl'),'Ole: Du hast Frieda besiegt! Nimm VM02 Surfer. Damit überquerst du Wasser. Bring es im Beutel einem Monster bei.'))}
-,{x:4,y:2,z:8,boss:1,req:2,f:1,ord:'Blätterorden',hr:'#43a047',ic:'#ffd600',c:'#2e7d32',h:'#a5d6a7',n:'Tamara',team:[['pilzi',11],['moosi',11],['gartora',13]],a:['Tamara: Willkommen in der Waldarena!','Tamara: Die Natur ist geduldig, aber stark!'],b:['Tamara: Das Blätterorden gehört dir.','Tamara: Marlo in der Muschelbucht ist der Nächste. Viel Glück!']},
+ {x:6,y:4,z:6,nc:1,hr:'#bdbdbd',ic:'#795548',c:'#6d4c41',h:'#fff',n:'Angler Ole',say:()=>!NP[14].done?'Ole: Besiege erst Tamara in Waldheim, dann schenke ich dir etwas Besonderes.':(it.vms?'Ole: Das Meer gehört dir. Surfe mutig nach Westen, Marlo wartet in Perlhafen!':(it.vms=1,sfx('lvl'),'Ole: Du hast Tamara besiegt! Nimm VM02 SURFER. Öffne MENÜ > BEUTEL und bringe es einem Monster bei. Dann surfst du über das Wasser im Westen der Bucht bis nach Perlhafen zu Marlo.'))}
+,{x:4,y:2,z:8,boss:1,req:2,f:1,ord:'Blätterorden',hr:'#43a047',ic:'#ffd600',c:'#2e7d32',h:'#a5d6a7',n:'Tamara',team:[['pilzi',11],['moosi',11],['gartora',13]],a:['Tamara: Willkommen in der Waldarena!','Tamara: Die Natur ist geduldig, aber stark!'],b:['Tamara: Das Blätterorden gehört dir.','Tamara: Als Nächstes wartet Marlo in Perlhafen. Der Weg führt über die Muschelbucht: Angler Ole schenkt dir dort VM02 Surfer!']},
  {x:4,y:2,z:9,boss:1,req:14,nc:1,ord:'Wellenorden',hr:'#1565c0',ic:'#00e5ff',c:'#0277bd',h:'#fff',n:'Marlo',team:[['fischi',13],['quelli',13],['ozeanix',15]],a:['Marlo: Die Wellen tragen nur die Mutigen!','Marlo: Zeig mir, wie du mit der Strömung kämpfst!'],b:['Marlo: Das Wellenorden gehört dir!','Marlo: Hinter Waldheim liegt Donnerstadt, hinter Perlhafen liegt Schattenhafen. Viel Glück!']},
  {x:4,y:7,z:7,rival:1,hr:'#b71c1c',ic:'#ff5722',c:'#e53935',h:'#ff8a65',n:'Kadett Finn',team:[['drakli',6],['kohli',6]],a:['Finn: Du kommst nicht an mir vorbei!'],b:['Finn: Die Anführerin wartet oben.']},
  {x:4,y:4,z:7,rival:1,f:1,hr:'#880e4f',ic:'#e91e63',c:'#e53935',h:'#ffcc80',n:'Kadettin Ruby',team:[['fluf',7],['drakli',7]],a:['Ruby: Frieda trainiert nur die Besten!'],b:['Ruby: Na gut, geh weiter.']},
@@ -1672,7 +1672,7 @@ const PT44=(()=>{
   // Hals + Kopf
   const hy=br*1.8;
   c.save();c.translate(0,hy);
-  rr(c,142,168,36,26,8);fs(c,sh,4);
+  rr(c,142,168,36,26,8);fs(c,sh,4);c.translate(160,190);c.scale(.88,.88);c.translate(-160,-190);
   // Ohren
   if(front){circ(c,86,128,15,sk,4);circ(c,234,128,15,sk,4);circ(c,86,130,6,sh,0);circ(c,234,130,6,sh,0)}
   // Haare hinten / Kopfform
@@ -1709,7 +1709,7 @@ const PT44=(()=>{
    }else{
     // Augen
     for(const ex of[128,192]){
-     const exl=ex+look,o=ex<160?-1:1;
+     const exl=ex+look,o=ex<160?-1:1;c.save();c.translate(ex,128);c.scale(.8,.8);c.translate(-ex,-128);
      if(blink){c.strokeStyle=K;c.lineWidth=6;c.lineCap='round';c.beginPath();c.moveTo(ex-22,132);c.quadraticCurveTo(ex,148,ex+22,132);c.stroke();c.beginPath();c.moveTo(ex+20*o,130);c.lineTo(ex+30*o,122);c.stroke()}
      else{
       c.beginPath();c.ellipse(ex,128,21,26,0,0,6.2832);c.fillStyle='#fff';c.fill();
@@ -1723,6 +1723,7 @@ const PT44=(()=>{
       if(n.f){c.lineWidth=3.5;c.beginPath();c.moveTo(ex+22*o,120);c.lineTo(ex+34*o,114);c.stroke()}
       c.strokeStyle='rgba(27,27,58,.45)';c.lineWidth=2.5;c.beginPath();c.moveTo(ex-14,153);c.quadraticCurveTo(ex,159,ex+14,153);c.stroke();
      }
+     c.restore();
     }
     // Brauen
     c.strokeStyle=shd(hr,-.35);c.lineWidth=5;c.lineCap='round';
@@ -2349,7 +2350,7 @@ function refreshKai(){NP.forEach(n=>{if(n.kai)n.team=n.done?n.team:kaiTeamN(n.ka
 const kaiN=(i,x,y,z,fd,a,b,cond)=>{const n={x,y,z,c:'#fdd835',h:'#1e88e5',nc:1,hr:'#e65100',ic:'#43a047',n:'Kai',rival:1,kai:i,team:[],a,b,hx:x,hy:y,fd,d:fd};n.sw=()=>!n.gone&&cond();NP.push(n);return n};
 NP.push({x:11,y:4,z:1,rival:1,c:'#1b1030',h:'#4a148c',hr:'#6a1b9a',ic:'#e040fb',sb:1,gd:1,n:'Kommandantin Skara',team:[['drakoon',60],['phantara',60],['abyssio',59]],a:['Skara: Du hast acht Orden? Beeindruckend. Aber hier endet dein Weg!'],b:['Skara: Unmöglich... Nox wird dich nicht verschonen.'],hx:11,hy:4,fd:[0,1],d:[0,1]},{x:4,y:8,z:1,rival:1,c:'#1b1030',h:'#4a148c',hr:'#6a1b9a',ic:'#e040fb',sb:1,gd:1,n:'Kommandant Brann',team:[['wolfax',60],['floraxis',59],['teslarax',60]],a:['Brann: Die Schattenbande hat auf dich gewartet, Orden-Sammler!'],b:['Brann: Du bist stärker, als ich dachte...'],hx:4,hy:8,fd:[0,-1],d:[0,-1]});
 kaiN(2,13,5,53,[0,1],['Kai: He, {N}! Du hast also auch ein Monster. Ich habe schon fleißig trainiert!','Kai: Heute besiege ich dich, und morgen Frieda!'],['Kai: Tsss... Glück gehabt!','Kai: Die Arena von Flammenstadt liegt im Norden. Ich bin gleich dahinter!'],()=>NP[4].done&&!NP[2].done);
-kaiN(3,5,4,5,[0,1],['Kai: {N}! Frieda habe ich schon geschlagen. Aber hör zu: Hier im Wald treiben sich Typen in schwarzen Uniformen herum.','Kai: Das ist die Schattenbande, die den Kristall geraubt hat! Jetzt klauen sie auch noch Monster. Zeig mir, dass du stark genug bist, sie zu stoppen!'],['Kai: Okay, okay, du bist gut. Ich folge ihren Spuren nach Osten.','Kai: Wenn du Tamara in Waldheim besiegt hast, sehen wir uns im Nebelwald!'],()=>NP[2].done&&!NP[14].done);
+kaiN(3,5,4,5,[0,1],['Kai: {N}! Frieda habe ich schon geschlagen. Aber hör zu: Im Funkelwald hinter diesem Tor treiben sich Typen in schwarzen Uniformen herum.','Kai: Das ist die Schattenbande, die den Kristall geraubt hat! Jetzt klauen sie auch noch Monster. Zeig mir, dass du stark genug bist, sie zu stoppen!'],['Kai: Okay, okay, du bist gut. Ich folge ihren Spuren nach Osten. Ein dicker Busch versperrt dort den Weg, dafür brauchst du Zerschneider.','Kai: Wenn du Tamara in Waldheim besiegt hast, sehen wir uns im Nebelwald!'],()=>NP[2].done&&!NP[14].done);
 kaiN(4,9,6,47,[0,-1],['Kai: Tamara war ein Spaziergang! Aber im Nebel habe ich einen Zettel der Schattenbande gefunden.','Kai: Darauf steht: Das Lagerhaus in Perlhafen. Ich glaube, dort ist ihr Versteck! Los, kämpfen wir!'],['Kai: Du wirst echt stark, {N}.','Kai: Ich schaue mir das Lagerhaus an. Aber wehe, du kommst mir zuvor!'],()=>NP[14].done&&!NP[30].done);
 kaiN(5,16,4,48,[0,1],['Kai: {N}! Ich war im Lagerhaus. Die Schattenbande plant etwas Großes: Ihr Boss Nox sitzt in der Düsterhöhle im Nordwesten.','Kai: Aber dafür brauchst du alle acht Orden. Lass mich sehen, ob du bereit bist!'],['Kai: Wow! Dann ab nach Schattenhafen. Umbra wartet!','Kai: Ich warte vor der Düsterhöhle auf dich.'],()=>NP[30].done&&!NP[31].done);
 kaiN(6,13,6,17,[0,-1],['Kai: {N}! Fünf Orden, nicht schlecht. Aber es gibt acht Arenen, vergiss das nicht!','Kai: Granit in Felsenfeste und Boreas in Frostburg warten noch. Ich teste dich vorher!'],['Kai: Hmpf! Du bist stark.','Kai: Wenn du alle acht Orden hast, findest du mich an der Düsterhöhle. Bis dahin!'],()=>allB()&&!(nd('Granit')&&nd('Boreas')));
@@ -2757,7 +2758,7 @@ async function go(dx,dy){
     bike=false;surf=true;sfx('door');splash38(nx,ny);if(!surfOK){surfOK=true;const sm=party.find(q=>q.hp>0&&mvs(q).includes('surfer'));await say((sm?nm(sm):'Dein Monster')+' setzt SURFER ein! Ab jetzt surfst du automatisch, sobald du ins Wasser läufst.')}
    }
    px=nx;py=ny;stp++;lastStep=Date.now();render();
-   if(party.length&&SPOOL[ar]&&Math.random()<.13){const bd=NP.filter(n=>n.boss&&n.done).length,lv=wildLv(),pl=SPOOL[ar];await fight([[pl[Math.floor(Math.random()*pl.length)],lv]],null)}
+   if(party.length&&SPOOL[ar]&&Math.random()<.13){const bd=NP.filter(n=>n.boss&&n.done).length,lv=wildLv(),pl=SPOOL[ar];await settle51();await fight([[pl[Math.floor(Math.random()*pl.length)],lv]],null)}
    return;
   }
   if(c==='c'){const t=NP.find(o=>vis(o)&&o.x===nx&&o.y===ny-1);if(t)await talk(t);return}
@@ -2784,7 +2785,7 @@ async function go(dx,dy){
    const bd=NP.filter(n=>n.boss&&n.done).length,lv=wildLv(),pool=POOL[ar]||WP;
    let k=pool[Math.floor(Math.random()*pool.length)];
    if(tod()>.7&&!CAVES.includes(ar)&&Math.random()<.4)k=NIGHTL[Math.floor(Math.random()*NIGHTL.length)];
-   await fight([[k,lv]],null)}
+   await settle51();await fight([[k,lv]],null)}
  }finally{busy=false}
 }
 document.addEventListener('keydown',e=>{
@@ -2814,6 +2815,7 @@ async function spot(){
    if(!c||'#wFhLbtvxPmCNcukTij4567896KG'.includes(c)||NP.some(o=>o!==n&&vis(o)&&o.x===x&&o.y===y))break;
    if(x===px&&y===py){hit=k;break}
   }
+  if(!hit&&n.kai){for(let k=2;k<=3&&!hit;k++){const cx=n.x+sx*(k-1),cy=n.y+sy*(k-1),c0=(A[cy]||'')[cx];if(!c0||'#wFhLbtvxPmCNcukTij4567896KG'.includes(c0)||NP.some(o=>o!==n&&vis(o)&&o.x===cx&&o.y===cy))break;for(const l of[-1,1]){if(n.x+sx*k+(sx?0:l)===px&&n.y+sy*k+(sy?0:l)===py)hit=k}}}
   if(!hit)continue;
   n.d=[sx,sy];n.bang=1;render();sfx('bang');await wait(700);n.bang=0;
   for(let k=1;k<hit;k++){n.x+=sx;n.y+=sy;render();await wait(190)}
@@ -2980,11 +2982,11 @@ function goal(){
  if(bt()<2)return 'Ziel: Besiege Bodo und Lea auf Route 1 im Norden von Morgenau.';
  if(!NP[2].done)return 'Ziel: Folge Route 1 nach Norden bis Flammenstadt und besiege Arenaleiterin Frieda.';
  if(!it.vmc)return 'Ziel: Prof. Tann im Labor hat VM01 Zerschneider für dich.';
- if(!it.vms)return 'Ziel: Angler Ole in der Muschelbucht (Westtor) schenkt dir VM02 Surfer.';
  if(!party.some(m=>mvs(m).includes('zerschneider')))return 'Ziel: Bringe VM01 Zerschneider einem Monster bei (Menü, Beutel).';
- if(!NP[14].done)return 'Ziel: Durch das Osttor und den Funkelwald nach Waldheim. Zerschneide den Busch. Dort wartet Tamara.';
- if(!party.some(m=>mvs(m).includes('surfer')))return 'Ziel: Bringe VM02 Surfer einem Monster bei, um Wasser zu überqueren.';
- if(!NP[15].done)return 'Ziel: Surfe durch die Muschelbucht (Westtor) nach Perlhafen. Marlo wartet in der Strandarena.';
+ if(!NP[14].done)return 'Ziel: Route 1 zurück, Osttor zum Funkelwald. Zerschneide den Busch und besiege Tamara in Waldheim.';
+ if(!it.vms)return 'Ziel: Angler Ole in der Muschelbucht (Route 1, Westtor) schenkt dir VM02 Surfer.';
+ if(!party.some(m=>mvs(m).includes('surfer')))return 'Ziel: Bringe VM02 Surfer einem Monster bei (Menü, Beutel).';
+ if(!NP[15].done)return 'Ziel: Surfe über das Wasser im Westen der Muschelbucht nach Perlhafen. Marlo wartet in der Strandarena.';
  if(!NP[30].done&&!nd('Admin Vesper')&&it.vmc)return 'Ziel: Donnerstadt liegt östlich von Waldheim. Die Schattenbande hat das Kraftwerk besetzt! Löse die Schalter im Keller und besiege Admin Vesper auf dem Dach.';
  if(!NP[30].done)return 'Ziel: Donnerstadt liegt östlich von Waldheim, hinter dem Nebelwald. Besiege Volta in der Donnerarena.';
  if(!NP[31].done)return 'Ziel: Schattenhafen liegt westlich von Perlhafen, über das Korallenmeer (Surfer nötig). Besiege Umbra in der Schattenarena.';
@@ -3067,7 +3069,7 @@ function pcBox(){return new Promise(res=>{
 async function kaiLeave(n){
  if(n.gone)return;
  const a=n.z||0,occ=new Set(NP.filter(o=>o!==n&&vis(o)).map(o=>o.x+','+o.y));occ.add(px+','+py);
- const SOL='#wFhLbtvxPmCNcukneB123ijTqlZYSDOoX';
+ const SOL=n.surf?'#FhLbtvxPmCNcukneB123ijTqlZYSDOoX':'#wFhLbtvxPmCNcukneB123ijTqlZYSDOoX';
  let tg=n.exit;const wps=[];
  for(const k in WT){const[a2,xy]=k.split(':');if(+a2===a){const[x,y]=xy.split(',').map(Number);wps.push([x,y])}}
  if(!tg&&wps.length){wps.sort((p,q)=>Math.hypot(q[0]-px,q[1]-py)-Math.hypot(p[0]-px,p[1]-py));tg=wps[0]}
@@ -3080,9 +3082,10 @@ async function kaiLeave(n){
     prev[k]=[x,y];if(isT){found=true;break}q.push([nx,ny])}}
   if(found){let c=[tg[0],tg[1]];while(c){path.unshift(c);c=prev[key(c[0],c[1])]}path.shift()}
  }
- if(path.length>45)path=path.slice(0,45);
+ if(path.length>90)path=path.slice(0,90);
  await say(n.n+': Ich ziehe weiter. Bis bald, {N}!');
  for(const[x,y]of path){n.d=[x-n.x,y-n.y];n.x=x;n.y=y;n.vx=n.vy=undefined;render();await wait(190)}
+ if(path.length&&tg&&WT[a+':'+tg[0]+','+tg[1]]){try{sfx('door')}catch(e){}await wait(120)}
  n.gone=true;render();save();
 }
 async function kaiAfter(){
@@ -6244,7 +6247,8 @@ body{display:block}
 #in:not(.ov) #mn button{display:flex;align-items:center;justify-content:center;text-align:center;margin:0;border:.4cqw solid #00e5ff66;border-radius:2.6cqw;background:linear-gradient(#123268,#0b214a);box-shadow:0 .7cqw 0 #00000055;font-size:3.7cqw!important;padding:1.2cqw 1.6cqw!important;line-height:1.2;touch-action:manipulation;transition:background .12s,transform .12s}
 #in:not(.ov) #mn button:active{background:#00e5ff44;transform:translateY(.6cqw);box-shadow:none}
 #in:not(.ov) #mn button.mi2{flex-direction:column;align-items:flex-start;justify-content:center;text-align:left;font-size:3.5cqw!important;padding:.6cqw 2cqw!important;line-height:1.15}
-#in:not(.ov) #mn button.mi2 small{font-size:2.5cqw;opacity:.9;display:flex;flex-wrap:nowrap;gap:0 1.6cqw;margin-top:.5cqw;white-space:nowrap}
+#in:not(.ov) #mn button.mi2 small{font-size:.72em!important;opacity:.9;display:flex;flex-wrap:nowrap;gap:0 1.4cqw;margin-top:.5cqw;white-space:nowrap;max-width:100%}
+#in:not(.ov) #mn button{min-width:0;overflow:hidden}
 #in:not(.ov) #mn button.wr{white-space:normal;overflow-wrap:anywhere}
 /* Overworld-Menues: breites Sheet am unteren Rand, grosse Tippflaechen */
 #in.ov #mn.sh{left:0!important;right:0!important;width:100%!important;bottom:0;height:auto!important;max-height:calc(62% + var(--sab))!important;border-width:.8cqw 0 0 0;border-radius:4.5cqw 4.5cqw 0 0;padding:2.4cqw 2.4cqw calc(2.4cqw + var(--sab));gap:1.6cqw;grid-auto-rows:minmax(13cqw,auto);align-content:start;overflow-y:auto;-webkit-overflow-scrolling:touch;box-shadow:0 -1.5cqw 6cqw #000a,0 0 3cqw #00e5ff55;background:linear-gradient(#0b1b44,#050d26)}
@@ -6282,6 +6286,8 @@ body{display:block}
    }
   }else if(!ov){
    bk.style.bottom='';
+   {const nc_=(m.style.gridTemplateColumns.match(/fr/g)||[]).length||1;m.style.gridTemplateColumns=Array(nc_).fill('minmax(0,1fr)').join(' ')}
+   fit38(m);
    const bi=items.findIndex(t=>/^(ZURÜCK|ABBRECHEN|NEIN|NICHT LERNEN)/.test(t));
    if(bi>=0&&m.scrollHeight<=m.clientHeight+10)bk.classList.add('hid');
   }
@@ -6300,16 +6306,14 @@ const mir=d=>d.replace(/(-?\d+\.?\d*),(-?\d+\.?\d*)/g,(m,a,b)=>(64-a)+','+b);
 function eye(c,cx,cy,o,ic,blink,fem,sc){
  sc=sc||1;
  if(blink){pa(c,'M'+(cx-4.4*sc)+','+(cy+1)+'Q'+cx+','+(cy+3.4)+' '+(cx+4.4*sc)+','+(cy+1),null,OUT,1.5);return}
- el(c,cx,cy,4.3*sc,5.1*sc,'#fff');
- const g=c.createLinearGradient(0,cy-5,0,cy+5);g.addColorStop(0,shd(ic,-.6));g.addColorStop(.5,ic);g.addColorStop(1,shd(ic,.5));
- el(c,cx,cy+.5*sc,3.5*sc,4.5*sc,g);
- el(c,cx,cy+.7*sc,1.9*sc,2.7*sc,'#15122e');
- el(c,cx-1.3*sc,cy-1.5*sc,1.35*sc,1.5*sc,'#fff');
- el(c,cx+1.5*sc,cy+2.4*sc,.75*sc,.75*sc,'rgba(255,255,255,.9)');
- // obere Wimper (dick) + Flick nach aussen
- pa(c,'M'+(cx-4.7*o*sc)+','+(cy-.3)+'Q'+(cx-4.2*o*sc)+','+(cy-5.9*sc)+' '+cx+','+(cy-5.6*sc)+'Q'+(cx+3.8*o*sc)+','+(cy-5.6*sc)+' '+(cx+4.8*o*sc)+','+(cy-1.2),null,OUT,2);
- pa(c,'M'+(cx+4.5*o*sc)+','+(cy-2)+'L'+(cx+6.4*o*sc)+','+(cy-3.4*sc),null,OUT,1.4);
- if(fem){pa(c,'M'+(cx+4.6*o*sc)+','+(cy-2.2)+'L'+(cx+6.8*o*sc)+','+(cy-4.4*sc),null,OUT,1.1);pa(c,'M'+(cx-3*sc)+','+(cy+4.9*sc)+'Q'+cx+','+(cy+5.9*sc)+' '+(cx+3*sc)+','+(cy+4.9*sc),null,'rgba(27,27,58,.6)',.7)}
+ sc=sc*.82;
+ el(c,cx,cy,3.5*sc,4.7*sc,'#fff');
+ const g=c.createLinearGradient(0,cy-4,0,cy+4);g.addColorStop(0,shd(ic,-.7));g.addColorStop(.6,shd(ic,-.2));g.addColorStop(1,shd(ic,.35));
+ el(c,cx,cy+.3*sc,2.8*sc,4.1*sc,g);
+ el(c,cx,cy+.5*sc,1.5*sc,2.3*sc,'#15122e');
+ el(c,cx-.9*sc,cy-1.2*sc,1*sc,1.2*sc,'#fff');
+ pa(c,'M'+(cx-3.6*o*sc)+','+(cy-.2)+'Q'+(cx-3.2*o*sc)+','+(cy-4.6*sc)+' '+cx+','+(cy-4.5*sc)+'Q'+(cx+2.9*o*sc)+','+(cy-4.5*sc)+' '+(cx+3.7*o*sc)+','+(cy-1),null,OUT,1.5);
+ if(fem)pa(c,'M'+(cx+3.4*o*sc)+','+(cy-1.8)+'L'+(cx+4.8*o*sc)+','+(cy-3*sc),null,OUT,1);
 }
 // Frisuren: vorne (Pony/Ponysaum), Pfade fuer Frontansicht
 const HF={
@@ -6352,6 +6356,7 @@ function figV(X,Y,n,d,w){
  }
  const c=oc;c.save();c.translate(X,Y);c.scale(.25,.25);
  if(side&&dx<0){c.translate(64,0);c.scale(-1,1)}
+ c.translate(32,61);c.scale(1.03,1.03);c.translate(-32,-61);
  try{
   c.lineJoin='round';c.lineCap='round';
   el(c,32,60,16.5,3,'rgba(0,0,0,.24)');
@@ -6417,7 +6422,7 @@ function figV(X,Y,n,d,w){
   if(back&&capeC)pa(c,'M16,33C10,42 10,52 12,58L52,'+(58+fl2)+'C54,52 54,42 48,33Z',capeC,K,1.3);
   if(L.lead&&A!=='shadow'&&front){el(c,15.5,34,5,2.8,L.champ?'#ffd54f':cp,K,1);el(c,48.5,34,5,2.8,L.champ?'#ffd54f':cp,K,1);if(!L.champ)el(c,32,39,3,3,'#ffd54f',K,.8);else{pa(c,'M32,36L36,40L32,44L28,40Z','#e53935','#ffd54f',1)}}
   // ===== Kopf =====
-  c.save();c.translate(0,bob);
+  c.save();c.translate(0,bob);c.translate(32,33);c.scale(.85,.85);c.translate(-32,-33);
   const face='M17.4,16.5C17.4,8 23.5,3.2 32,3.2S46.6,8 46.6,16.5C46.6,25.5 42.3,32.6 32,33C21.7,32.6 17.4,25.5 17.4,16.5Z';
   if(front){
    // Nacken + Ohren
@@ -6442,7 +6447,7 @@ function figV(X,Y,n,d,w){
     // Nase, Mund, Wangen
     pa(c,'M32,26.2l-.7,1.2h1.4',null,shd(sh,-.25),.7);
     if(L.lead)pa(c,'M29.6,29.6Q32,30.6 34.4,29.6',null,'#9a3f45',1);else pa(c,'M29.6,29Q32,31.6 34.4,29',null,'#9a3f45',1.05);
-    el(c,21.6,27,2.6,1.2,'rgba(255,110,130,.35)');el(c,42.4,27,2.6,1.2,'rgba(255,110,130,.35)');
+    el(c,21.8,27,2.4,1.1,'rgba(255,110,130,.22)');el(c,42.2,27,2.4,1.1,'rgba(255,110,130,.22)');
     if(L.beard){const bc=A==='sci'||/Prof|Alt|Opa/.test(n.n||'')?'#d7dde3':hr;pa(c,'M18.5,24Q20,33 32,36.5Q44,33 45.5,24Q42,27 32,28Q22,27 18.5,24Z',bc,shd(bc,-.5),1);pa(c,'M29,30Q32,31.4 35,30',null,'#6b3a3a',.9)}
    }
    // Frisur vorne
@@ -6522,6 +6527,70 @@ function figV(X,Y,n,d,w){
  }finally{c.restore()}
 }
 fig=function(X,Y,n,d,w){return figV(X,Y,n,d,w)};
+}
+
+/* ===== v51: Kampfstart nach Ankunft, iOS-Hoehe, Diagnose ===== */
+async function settle51(){
+ for(let i=0;i<40&&(Math.abs(vx-px)>.04||Math.abs(vy-py)>.04);i++)await wait(25);
+ vx=px;vy=py;render();
+ try{sfx('step')}catch(e){}
+ await wait(260);
+}
+{
+ const root=document.documentElement;
+ const st=document.createElement('style');
+ st.textContent='html.fh51 #gb{bottom:auto!important;height:var(--fh)!important}';
+ document.head.appendChild(st);
+ const sa=()=>{
+  try{
+   const stand=navigator.standalone===true||(window.matchMedia&&matchMedia('(display-mode:standalone)').matches);
+   const por=innerHeight>=innerWidth,sh=por?Math.max(screen.width,screen.height):Math.min(screen.width,screen.height);
+   const gap=sh-Math.round(innerHeight);
+   if(stand&&por&&gap>0&&gap<=110){root.style.setProperty('--fh',sh+'px');root.classList.add('fh51')}
+   else{root.style.removeProperty('--fh');root.classList.remove('fh51')}
+   fit();
+  }catch(e){}
+ };
+ window.__sa51=sa;sa();
+ window.addEventListener('resize',()=>{sa();setTimeout(sa,300)});
+ window.addEventListener('orientationchange',()=>setTimeout(sa,400));
+ setTimeout(sa,600);
+ // Diagnose: 5x auf den Titel im Kopfbereich tippen
+ let tp=0,tt=0;
+ $('st').addEventListener('click',()=>{
+  const n=Date.now();tp=n-tt<900?tp+1:1;tt=n;
+  if(tp>=5){
+   tp=0;
+   let o=document.getElementById('dg51');if(o){o.remove();return}
+   const pr=document.createElement('div');pr.style.cssText='position:fixed;left:0;top:0;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)';document.body.appendChild(pr);
+   const cs=getComputedStyle(pr),r=$('gb').getBoundingClientRect(),vv=window.visualViewport;
+   const L=['innerH '+innerHeight+' innerW '+innerWidth,'screen '+screen.width+'x'+screen.height,'clientH '+root.clientHeight,'visualVP '+(vv?Math.round(vv.height)+'/'+Math.round(vv.offsetTop):'-'),'safe T/B '+cs.paddingTop+' / '+cs.paddingBottom,'gb top '+Math.round(r.top)+' h '+Math.round(r.height),'standalone '+(navigator.standalone===true)+' fh '+(root.style.getPropertyValue('--fh')||'-')];
+   pr.remove();
+   o=document.createElement('div');o.id='dg51';o.style.cssText='position:fixed;left:8px;right:8px;top:90px;z-index:99999;background:#000d;color:#9fffa8;font:12px/1.5 monospace;padding:12px;border-radius:10px;white-space:pre-wrap';o.textContent=L.join('\n')+'\n(Tippen zum Schließen)';o.onclick=()=>o.remove();document.body.appendChild(o);
+  }
+ });
+}
+
+/* ===== v51: Rivale auf der Strasse, Waechter an den Toren ===== */
+{
+ const K=i=>NP.find(o=>o.kai===i);
+ const set=(i,x,y,z,fd,ex,sf)=>{const n=K(i);n.x=n.hx=x;n.y=n.hy=y;n.z=z;n.fd=n.d=fd;n.exit=ex;if(sf)n.surf=1};
+ set(2,13,5,53,[0,1],[10,0]);
+ set(3,17,24,53,[-1,0],[21,24]);
+ set(4,9,5,47,[-1,0],[17,5]);
+ set(5,12,5,48,[1,0],[0,5],1);
+ set(6,12,5,17,[-1,0],[17,5]);
+ set(7,9,5,50,[-1,0],[17,5]);
+ set(8,4,9,53,[1,0],[2,7]);
+ const G=(x,y,z,fd,cond,msg)=>NP.push({x,y,z,c:'#37474f',h:'#ffca28',hr:'#3e2723',ic:'#ef6c00',n:'Wächter',guard:1,hx:x,hy:y,fd,d:fd,say:()=>'Wächter: '+msg,sw:()=>!cond()});
+ G(20,24,53,[-1,0],()=>NP[2].done,'Zum Funkelwald darf nur, wer Frieda in Flammenstadt besiegt hat. Folge Route 1 nach Norden!');
+ G(1,24,53,[1,0],()=>NP[14].done,'Die Muschelbucht ist gesperrt, bis Tamara in Waldheim dich anerkennt. Der Weg dorthin führt durch den Funkelwald im Osten.');
+ G(11,1,26,[0,1],()=>NP[2].done,'Der Aschenpfad ist abgesperrt. Besiege erst Arenaleiterin Frieda, ihre Arena ist hier in Flammenstadt!');
+ G(12,1,26,[0,1],()=>NP[2].done,'Der Aschenpfad ist abgesperrt. Besiege erst Arenaleiterin Frieda, ihre Arena ist hier in Flammenstadt!');
+ G(26,8,27,[-1,0],()=>NP[15].done,'Route 4 ist gesperrt. Besiege erst Marlo in Perlhafen!');
+ G(1,7,28,[1,0],()=>NP[30].done,'Das Korallenmeer ist gesperrt. Besiege erst Volta in Donnerstadt!');
+ G(28,8,12,[-1,0],()=>allB(),'Route 2 ist nur für Trainer mit fünf Orden. Du brauchst die Orden von Frieda bis Umbra!');
+ G(28,9,12,[-1,0],()=>allB(),'Route 2 ist nur für Trainer mit fünf Orden. Du brauchst die Orden von Frieda bis Umbra!');
 }
 
 fit();introSeq().then(title);if(typeof requestAnimationFrame==='function')requestAnimationFrame(tick);
