@@ -6552,7 +6552,8 @@ async function settle51(){
    const stand=navigator.standalone===true||(window.matchMedia&&matchMedia('(display-mode:standalone)').matches);
    const por=innerHeight>=innerWidth,sh=por?Math.max(screen.width,screen.height):Math.min(screen.width,screen.height);
    const gap=sh-Math.round(innerHeight);
-   const key=(stand&&por&&gap>0&&gap<=110)?String(sh):'';
+   const ios=navigator.standalone===true;
+   const key=(stand&&por&&((ios&&gap>=-2&&gap<=110)||(gap>0&&gap<=110)))?String(sh):'';
    if(key!==last){
     last=key;
     if(key){root.style.setProperty('--fh',key+'px');root.classList.add('fh51')}
